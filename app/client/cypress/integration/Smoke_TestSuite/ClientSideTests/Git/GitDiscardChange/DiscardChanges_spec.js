@@ -201,8 +201,9 @@ describe("Git discard changes:", function() {
     cy.get(`.t--entity-name:contains(${jsObject})`).should("not.exist");
     // discard changes
     cy.gitDiscardChanges();
+    cy.wait(3000);
     //verify JSObject is recovered
-    cy.get(`.t--entity-name:contains(${jsObject})`).should("be.visible");
+    cy.get(`.t--entity-name:contains(${jsObject})`).should("exist");
     cy.get(".bp3-input").should("have.value", "Success");
   });
 

@@ -362,7 +362,7 @@ Cypress.Commands.add(
   },
 );
 
-Cypress.Commands.add("gitDiscardChanges", (assertResourceFound = true) => {
+Cypress.Commands.add("gitDiscardChanges", () => {
   cy.get(gitSyncLocators.bottomBarCommitButton).click();
   cy.get(gitSyncLocators.discardChanges)
     .children()
