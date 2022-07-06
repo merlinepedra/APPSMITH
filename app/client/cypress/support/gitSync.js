@@ -143,6 +143,7 @@ Cypress.Commands.add("latestDeployPreview", () => {
 
 Cypress.Commands.add("createGitBranch", (branch) => {
   cy.get(gitSyncLocators.branchButton).click({ force: true });
+  cy.wait(3000);
   cy.get(gitSyncLocators.branchSearchInput).type(`{selectall}${branch}{enter}`);
   // increasing timeout to reduce flakyness
   cy.get(".bp3-spinner", { timeout: 30000 }).should("exist");
